@@ -23,7 +23,7 @@ print("Resta:", a - b)
 print("Multiplicación:", a * b)
 print("División:", a / b)
 print("División entera:", a // b)  # devuelve solo la parte entera
-print("Módulo (resto):", a % b)
+print("Modulo (resto):", a % b)
 print("Potencia:", a ** b)
 
 # -----------------------------

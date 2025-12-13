@@ -146,6 +146,11 @@
 
 # # 10. Simulación de login
 
+
+
+
+
+
 # # Enunciado:
 # # Guarda un usuario y contraseña en un programa.
 # # El usuario tiene 3 intentos para escribirlos correctamente.
@@ -201,35 +206,106 @@ import random
 
 # distance_to_miles(10000)
 # Write code below 💖
-import math
-menu = ['🍔 Cheeseburger','🍟 Fries','🥤 Soda','🍦 Ice Cream','🍪 Cookie']
+# import math
+# menu = ['🍔 Cheeseburger','🍟 Fries','🥤 Soda','🍦 Ice Cream','🍪 Cookie']
 
-def welcome():
-  menu = ['🍔 Cheeseburger','🍟 Fries','🥤 Soda','🍦 Ice Cream','🍪 Cookie']
-  print(f"""elige el item que quieras del menu 
-{menu}""")
+# def welcome():
+#   menu = ['🍔 Cheeseburger','🍟 Fries','🥤 Soda','🍦 Ice Cream','🍪 Cookie']
+#   print(f"""elige el item que quieras del menu 
+# {menu}""")
 
-def get_item(x):
-  menu = ['🍔 Cheeseburger','🍟 Fries','🥤 Soda','🍦 Ice Cream','🍪 Cookie']
-  x = x-1
-  return menu[x]
+# def get_item(x):
+#   menu = ['🍔 Cheeseburger','🍟 Fries','🥤 Soda','🍦 Ice Cream','🍪 Cookie']
+#   x = x-1
+#   return menu[x]
 
 
 
-pedido = []
-x = 0
-welcome()
-try:
-  while x != 67:
-    x =math.floor(int(input("""
-    Elige que item del menu quieres,
-    si deseas dejar de ordenar ingresa 67: """)))
-    if x < len(menu)+1:
-      pedido.append(get_item(x))
-      print(f"Los items que has pedido son:{pedido}")
-    elif x < len(menu)+1 and x != 67:
-      print("error, solo tenemos items del 1 al 5")
-except ValueError as xd:
-  print("""error papi, no se pueden ingresar letras ni simbolos,
-   ahora empieza desde cero klk, mete numeros enteros""")
+# pedido = []
+# x = 0
+# welcome()
+# try:
+#   while x != 67:
+#     x =math.floor(int(input("""
+#     Elige que item del menu quieres,
+#     si deseas dejar de ordenar ingresa 67: """)))
+#     if x < len(menu)+1:
+#       pedido.append(get_item(x))
+#       print(f"Los items que has pedido son:{pedido}")
+#     elif x < len(menu)+1 and x != 67:
+#       print("error, solo tenemos items del 1 al 5")
+# except ValueError as xd:
+#   print("""error papi, no se pueden ingresar letras ni simbolos,
+#    ahora empieza desde cero klk, mete numeros enteros""")
 
+
+# class Restaurant:
+#   nombre = "bobs burgers"
+#   nombre2 = "american diner"
+#   puntuacion = 4.7
+#   estado = False
+
+
+
+# print(vars(Restaurant))
+
+#------------------------------------------------------------------------------------------
+
+# class BankAccount:
+#   def __init__(self, first_name, last_name, account_id, account_type, pin, balance):
+#     self.first_name = first_name
+#     self.last_name = last_name
+#     self.account_id = account_id
+#     self.account_type = account_type
+#     self.pin = pin
+#     self.balance = balance
+
+#   def deposito(self, ingresa):
+#     self.balance += ingresa
+#     print(f"El balance que ingresaras es de {self.balance}")
+
+#   def retirar(self, saca):
+#     self.balance -= saca
+#     print(f"El balance que sacaras es de {self.balance}")
+
+#   def mirar(self):
+#     print(f"""El balance actual es de {self.balance}""")
+
+# CuentaElmer = BankAccount("Elmer", "Lopez", 0, "Ahorro", 1234, 100.00)
+
+# CuentaElmer.deposito(95.00)
+# CuentaElmer.retirar(25.00)
+# CuentaElmer.mirar()
+# print(vars(CuentaElmer))
+
+#--------------------------------------------------------------------------------------
+
+class Pokemon():
+  def __init__(self, entry, name, types, description, is_caught):
+    self.entry = entry
+    self.name = name
+    self.types = types
+    self.description = description
+    self.is_caught = is_caught
+
+  def speak(self):
+    print(self.name[0:4]+"-"+self.name)
+
+  def mostrar_detalles(self):
+    print(f"""
+Entry Number: {self.entry}
+Name: {self.name}
+Type: {self.types}
+Description: {self.description}
+""")
+
+Pokemon1 = Pokemon(1,"Pikachu" ,"electrico" ,"La jodida rata" ,True)
+Pokemon2 = Pokemon(2, "Greninja", "agua/siniestro", "El ninja anfibio", True)
+
+Pokemon1.speak()
+Pokemon1.mostrar_detalles()
+
+Pokemon2.speak()
+Pokemon2.mostrar_detalles()
+
+#----------------------------------------------------------------------------------------------------

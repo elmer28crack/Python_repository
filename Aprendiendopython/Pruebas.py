@@ -280,32 +280,80 @@ import random
 
 #--------------------------------------------------------------------------------------
 
-class Pokemon():
-  def __init__(self, entry, name, types, description, is_caught):
-    self.entry = entry
-    self.name = name
-    self.types = types
-    self.description = description
-    self.is_caught = is_caught
+# class Pokemon():
+#   def __init__(self, entry, name, types, description, is_caught):
+#     self.entry = entry
+#     self.name = name
+#     self.types = types
+#     self.description = description
+#     self.is_caught = is_caught
 
-  def speak(self):
-    print(self.name[0:4]+"-"+self.name)
+#   def speak(self):
+#     print(self.name[0:4]+"-"+self.name)
 
-  def mostrar_detalles(self):
-    print(f"""
-Entry Number: {self.entry}
-Name: {self.name}
-Type: {self.types}
-Description: {self.description}
-""")
+#   def mostrar_detalles(self):
+#     print(f"""
+# Entry Number: {self.entry}
+# Name: {self.name}
+# Type: {self.types}
+# Description: {self.description}
+# """)
 
-Pokemon1 = Pokemon(1,"Pikachu" ,"electrico" ,"La jodida rata" ,True)
-Pokemon2 = Pokemon(2, "Greninja", "agua/siniestro", "El ninja anfibio", True)
+# Pokemon1 = Pokemon(1,"Pikachu" ,"electrico" ,"La jodida rata" ,True)
+# Pokemon2 = Pokemon(2, "Greninja", "agua/siniestro", "El ninja anfibio", True)
 
-Pokemon1.speak()
-Pokemon1.mostrar_detalles()
+# Pokemon1.speak()
+# Pokemon1.mostrar_detalles()
 
-Pokemon2.speak()
-Pokemon2.mostrar_detalles()
+# Pokemon2.speak()
+# Pokemon2.mostrar_detalles()
 
 #----------------------------------------------------------------------------------------------------
+
+# import random
+
+# def play():
+#   desicion = "y"
+#   while desicion.lower() == "y":
+#     dice = ['🍒',' 🍇', '🍉', '7️⃣']
+#     nigga = random.choices(dice, k=3)
+#     print(" | ".join(nigga))
+    
+#     if (nigga == ['7️⃣','7️⃣','7️⃣']):
+#         print("GANASTE EL JACKPOT")
+#         break;
+#     else:
+#         print("xd")
+    
+#     desicion = input("Quieres continuar? Y o N ")
+
+# play()
+
+
+#--------------------------------------------Wordlee--------------------------------------------------------------------
+palabra = "ayuda"
+
+while True:
+    respuesta = ""
+    adivinaxd = input("Ingresa una palabra para el Wordle: ")
+
+    if len(adivinaxd) != 5:
+        print("La palabra debe tener 5 letras")
+        continue
+
+    for i in range(5):
+        if adivinaxd[i] == palabra[i]:
+            respuesta += " 🟩 "
+        elif adivinaxd[i] in palabra:
+            respuesta += " 🟨 "
+        else:
+            respuesta += " 🟥 "
+    
+    if adivinaxd == palabra:
+        print(" 🟩 🟩 🟩 🟩 🟩 ")
+        print("¡Ganaste!")
+        break 
+
+    print(respuesta)
+#----------------------------------------------------------------------------------------------------------------
+

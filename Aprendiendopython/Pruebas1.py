@@ -56,83 +56,83 @@
 #     if Elecion == "0":
 #         break
 
+#-----------------------------------------------------------------------------------------------------
 
+import tkinter as tk
+from tkinter import messagebox
 
-# import tkinter as tk
-# from tkinter import messagebox
+# Variables globales
+mayor = None
+menor = None
+acumulador = 0
+contador = 0
 
-# # Variables globales
-# mayor = None
-# menor = None
-# acumulador = 0
-# contador = 0
-
-# def ingresar_valor():
-#     global mayor, menor, acumulador, contador
+def ingresar_valor():
+    global mayor, menor, acumulador, contador
     
-#     dato = entrada.get()
+    dato = entrada.get()
     
-#     try:
-#         numero = int(dato)
-#     except ValueError:
-#         messagebox.showerror("Error", "Debe ser un número")
-#         return
+    try:
+        numero = int(dato)
+    except ValueError:
+        messagebox.showerror("Error", "Debe ser un número")
+        return
     
-#     if numero == 0:
-#         return
+    if numero == 0:
+        return
     
-#     if mayor is None or numero > mayor:
-#         mayor = numero
+    if mayor is None or numero > mayor:
+        mayor = numero
     
-#     if menor is None or numero < menor:
-#         menor = numero
+    if menor is None or numero < menor:
+        menor = numero
     
-#     acumulador += numero
-#     contador += 1
+    acumulador += numero
+    contador += 1
 
-#     entrada.delete(0, tk.END)
-#     messagebox.showinfo("OK", f"Número {numero} agregado")
+    entrada.delete(0, tk.END)
+    messagebox.showinfo("OK", f"Número {numero} agregado")
 
-# def mostrar_resultados():
-#     if contador == 0:
-#         messagebox.showwarning("Aviso", "No hay datos")
-#         return
+def mostrar_resultados():
+    if contador == 0:
+        messagebox.showwarning("Aviso", "No hay datos")
+        return
     
-#     promedio = acumulador / contador
+    promedio = acumulador / contador
     
-#     resultado = f"""
-# Mayor: {mayor}
-# Menor: {menor}
-# Promedio: {promedio}
-# """
-#     messagebox.showinfo("Resultados", resultado)
+    resultado = f"""
+Mayor: {mayor}
+Menor: {menor}
+Promedio: {promedio}
+"""
+    messagebox.showinfo("Resultados", resultado)
 
-# def reiniciar():
-#     global mayor, menor, acumulador, contador
-#     mayor = None
-#     menor = None
-#     acumulador = 0
-#     contador = 0
-#     messagebox.showinfo("Reset", "Datos reiniciados")
+def reiniciar():
+    global mayor, menor, acumulador, contador
+    mayor = None
+    menor = None
+    acumulador = 0
+    contador = 0
+    messagebox.showinfo("Reset", "Datos reiniciados")
 
-# # Ventana
-# ventana = tk.Tk()
-# ventana.title("Elmer's App Pro 😏")
-# ventana.geometry("300x200")
+# Ventana
+ventana = tk.Tk()
+ventana.title("Elmer's App Pro 😏")
+ventana.geometry("300x200")
 
-# # Input
-# entrada = tk.Entry(ventana)
-# entrada.pack(pady=10)
+# Input
+entrada = tk.Entry(ventana)
+entrada.pack(pady=10)
 
-# # Botones
-# btn_ingresar = tk.Button(ventana, text="Ingresar número", command=ingresar_valor)
-# btn_ingresar.pack(pady=5)
+# Botones
+btn_ingresar = tk.Button(ventana, text="Ingresar número", command=ingresar_valor)
+btn_ingresar.pack(pady=5)
 
-# btn_resultados = tk.Button(ventana, text="Ver resultados", command=mostrar_resultados)
-# btn_resultados.pack(pady=5)
+btn_resultados = tk.Button(ventana, text="Ver resultados", command=mostrar_resultados)
+btn_resultados.pack(pady=5)
 
-# btn_reset = tk.Button(ventana, text="Reiniciar", command=reiniciar)
-# btn_reset.pack(pady=5)
+btn_reset = tk.Button(ventana, text="Reiniciar", command=reiniciar)
+btn_reset.pack(pady=5)
 
-# # Ejecutar app
-# ventana.mainloop()
+# Ejecutar app
+ventana.mainloop()
